@@ -1,0 +1,16 @@
+h1 span {
+  font: 26px Monaco, MonoSpace;
+  height: 100px;
+  position: absolute;
+  width: 20px;
+  left: 50%;
+  top: 0;
+  transform-origin: bottom center;
+}
+
+button {
+  height: 40px;
+  width: 40px;
+  background: black;
+  border-radius: 50%
+}

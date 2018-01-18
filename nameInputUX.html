@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="nameInputUX.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <style media="screen">
+    h1 span {
+      font: 40px Monaco, MonoSpace;
+      height: 270px;
+      position: absolute;
+      width: 80px;
+      left: calc(50% - 50px);
+      top: 60px;
+      text-align: center;
+      transform-origin: bottom center;
+    }
+
+    .active-letter {
+      font-size: 80px;
+      width: 100px;
+      text-align: center;
+      margin-left: -10px;
+      margin-top: -50px;
+    }
+    
+    .hide-letter {
+      display: none;
+    }
+    
+    .name-input {
+      margin: 0 auto;
+      width: 310px;
+      font-size: 52px;
+      margin-top: 650px;
+    }
+
+    .name-input span {
+      display: inline-block;;
+    }
+    
+    button {
+      height: 220px;
+      width: 220px;
+      background: black;
+      border-radius: 50%;
+      margin-left: calc(50% - 110px);
+      margin-top: 40px;
+    }
+    
+    .settings {
+      margin-top: 40px;
+    }
+    
+    input[type=text] {
+      padding: 10px;
+      display: block;
+    }
+    
+  </style>
+
+  <script type="text/javascript" src="../nameInputUX/nameInputUX.js"></script>
+
+  <!-- max 8 character name -->
+  <h1>
+    <span class="input backspace"><</span>
+    <span class="input a">a</span>
+    <span class="input b">b</span>
+    <span class="input c">c</span>
+    <span class="input d">d</span>
+    <span class="input e">e</span>
+    <span class="input f">f</span>
+    <span class="input g">g</span>
+    <span class="input h">h</span>
+    <span class="input i">i</span>
+    <span class="input j">j</span>
+    <span class="input k">k</span>
+    <span class="input l">l</span>
+    <span class="input m">m</span>
+    <span class="input n">n</span>
+    <span class="input o">o</span>
+    <span class="input p">p</span>
+    <span class="input q">q</span>
+    <span class="input r">r</span>
+    <span class="input s">s</span>
+    <span class="input t">t</span>
+    <span class="input u">u</span>
+    <span class="input v">v</span>
+    <span class="input w">w</span>
+    <span class="input x">x</span>
+    <span class="input y">y</span>
+    <span class="input z">z</span>
+  </h1>
+  <div class="name-input">
+    <span class="char1">_</span>
+    <span class="char2">_</span>
+    <span class="char3">_</span>
+    <span class="char4">_</span>
+    <span class="char5">_</span>
+    <span class="char6">_</span>
+    <span class="char7">_</span>
+    <span class="char8">_</span>
+  </div>
+  <button type="button" name="button"></button>
+  
+  <h1>Settings:</h1>
+  <form class="settings" action="index.html" method="post">
+    <h2>Tilt Degrees</h2>
+    Y-Axis Spin:<input type="text" name="spin" value="10">
+    Y-Axis Speed Up:<input type="text" name="speedup" value="20">
+    Y-Axis Fastest:<input type="text" name="fastest" value="30">
+    X-Axis Allow Movement (between x & -x):<input type="text" name="allow-movement" value="60">
+    
+    <h2>Speed</h2>
+    Spin:<input type="text" name="spin-speed" value="0">
+    Speed Up:<input type="text" name="speedup-speed" value="0.1">
+    Fastest:<input type="text" name="fastest-speed" value="0.2">
+  </form>
+</body>
+
+
+</html>
