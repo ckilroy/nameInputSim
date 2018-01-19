@@ -2,7 +2,7 @@ arcDegrees = 450;
 startingDegree = 275;
 numCharacters = 27;
 letterSpacingDelta = (arcDegrees / numCharacters);
-movementDelta = letterSpacingDelta / 500;
+movementDelta = letterSpacingDelta / 5000;
 positionArray = [];
 degreesOver330 = arcDegrees - 330;
 percentOfCircleOver = degreesOver330 / arcDegrees;
@@ -213,31 +213,6 @@ $(window).ready(function() {
       }
     }
   });
-
-  // $("input").on("change", function() {
-  //   if (this.name === "spin") {
-  //     yAxisSpin = parseInt(this.value);
-  //   }
-  //   if (this.name === "speedup") {
-  //     yAxisSpeedUp = parseInt(this.value);
-  //   }
-  //   if (this.name === "fastest") {
-  //     yAxisFastest = parseInt(this.value);
-  //   }
-  //   if (this.name === "allow-movement") {
-  //     XAxisAllowsMovement = parseInt(this.value);
-  //   }
-
-    // if (this.name === "spin-speed") {
-    //   spinSpeed = parseInt(this.value);
-    // }
-    // if (this.name === "speedup-speed") {
-    //   speedUpSpeed = parseInt(this.value);
-    // }
-    // if (this.name === "fastest-speed") {
-    //   fastestSpeed = parseInt(this.value);
-    // }
-  // });
   
     var spinTiltSlider = document.getElementById("spin-tilt");
     var speedupTiltSlider = document.getElementById("speed-up-tilt");
@@ -249,11 +224,11 @@ $(window).ready(function() {
     });
     speedupTiltSlider.addEventListener("input", function() {
       yAxisSpeedUp = event.target.value;
-      $(".speed-up-tilt-setting").text(yAxisSpin + " deg")
+      $(".speed-up-tilt-setting").text(yAxisSpeedUp + " deg")
     });
     fastestTiltSlider.addEventListener("input", function() {
       yAxisFastest = event.target.value;
-      $(".fastest-tilt-setting").text(yAxisSpin + " deg")
+      $(".fastest-tilt-setting").text(yAxisFastest + " deg")
     });
 
   var spinSlider = document.getElementById("spin-speed");
@@ -261,13 +236,13 @@ $(window).ready(function() {
   var fastestSlider = document.getElementById("fastest-speed");
 
   spinSlider.addEventListener("input", function() {
-    spinSpeed = event.target.value * .1;
+    spinSpeed = event.target.value * .001;
   });
   speedupSlider.addEventListener("input", function() {
-    speedUpSpeed = event.target.value * .1;
+    speedUpSpeed = event.target.value * .001;
   });
   fastestSlider.addEventListener("input", function() {
-    fastestSpeed = event.target.value * .1
+    fastestSpeed = event.target.value * .001
   });
 
 
