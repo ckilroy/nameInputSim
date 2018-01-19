@@ -36,7 +36,7 @@ var arrangeChars = function(element, idx) {
   if ($(element).hasClass("active-letter")) {
     var rotationString = "rotate(" + 0 + "deg)";
     $(element).css("transform", rotationString);
-    $(element).find(".letter").css("transform", rotationString)
+    $(element).find(".letter").css("transform", rotationString);
   } else {
     var rotationString = "rotate(" + rotationDegrees + "deg)";
     $(element).css("transform", rotationString);
@@ -54,6 +54,7 @@ var arrangeChars = function(element, idx) {
     $(element).addClass("active-letter");
     var rotationString = "rotate(" + 0 + "deg)";
     $(element).css("transform", rotationString);
+    $(element).find(".letter").css("transform", rotationString);
   } else {
     $(element).removeClass("active-letter");
   }
@@ -187,35 +188,59 @@ $(window).ready(function() {
       }
     }
   };
-  // 
-  // $("button").on("click", function() {
-  //   var currentLetter = $(".active-letter").text();
-  // 
-  //   if (currentLetter !== "<") {
-  //     $(".char" + charSelector).text(currentLetter);
-  //     if (charSelector < 9) {
-  //       charSelector += 1;
-  //     }
-  //   } else {
-  //     $(".char" + (charSelector - 1)).text("_");
-  //     if (charSelector > 1) {
-  //       charSelector -= 1;
-  //     }
-  //   }
-  // });
-  // 
-  // $("input").on("change", function() {
-  //   if (this.name === "spin") {
-  //     yAxisSpin = parseInt(this.value);
-  //   }
-  //   if (this.name === "speedup") {
-  //     yAxisSpeedUp = parseInt(this.value);
-  //   }
-  //   if (this.name === "fastest") {
-  //     yAxisFastest = parseInt(this.value);
-  //   }
-  //   if (this.name === "allow-movement") {
-  //     XAxisAllowsMovement = parseInt(this.value);
-  //   }
-  // });
+
+  $("button").on("click", function() {
+    var currentLetter = $(".active-letter").text();
+
+    if (currentLetter !== "<") {
+      $(".char" + charSelector).text(currentLetter);
+      if (charSelector < 9) {
+        charSelector += 1;
+      }
+    } else {
+      $(".char" + (charSelector - 1)).text("_");
+      if (charSelector > 1) {
+        charSelector -= 1;
+      }
+    }
+  });
+
+  $("input").on("change", function() {
+    if (this.name === "spin") {
+      yAxisSpin = parseInt(this.value);
+    }
+    if (this.name === "speedup") {
+      yAxisSpeedUp = parseInt(this.value);
+    }
+    if (this.name === "fastest") {
+      yAxisFastest = parseInt(this.value);
+    }
+    if (this.name === "allow-movement") {
+      XAxisAllowsMovement = parseInt(this.value);
+    }
+  });
+
+  var letterSpacingSlider = document.getElementById("letter-spacing");
+
+  letterSpacingSlider.addEventListener("input", function() {
+    arcDegrees = event.target.value;
+    positionArray = [];
+    startingDegree = 270;
+    numCharacters = 27;
+    letterSpacingDelta = (arcDegrees / numCharacters);
+    movementDelta = letterSpacingDelta / 500;
+    degreesOver180 = arcDegrees - 180;
+    percentOfCircleOver = degreesOver180 / arcDegrees;
+    numCharactersToHide = Math.ceil(numCharacters * percentOfCircleOver);
+    firstLoad = true;
+    setPositions();
+    $('.input').each(function(idx, element) {
+      $(element).removeClass('hide-letter');
+      $(element).removeClass('active-letter');
+    });
+    $('.input').each(function(idx) {
+      arrangeChars(this, idx);
+    });
+  });
+
 });

@@ -28,11 +28,11 @@
       margin-left: -10px;
       margin-top: -50px;
     }
-    
+
     .hide-letter {
       display: none;
     }
-    
+
     .name-input {
       margin: 0 auto;
       width: 310px;
@@ -41,9 +41,10 @@
     }
 
     .name-input span {
-      display: inline-block;;
+      display: inline-block;
+      ;
     }
-    
+
     button {
       height: 220px;
       width: 220px;
@@ -52,20 +53,19 @@
       margin-left: calc(50% - 110px);
       margin-top: 40px;
     }
-    
+
     .settings {
       margin-top: 40px;
     }
-    
+
     input[type=text] {
       padding: 10px;
       display: block;
     }
-    
+
     .letter {
       position: absolute;
     }
-    
   </style>
 
   <script type="text/javascript" src="../nameInputUX/nameInputUX.js"></script>
@@ -111,20 +111,21 @@
     <span class="char8">_</span>
   </div>
   <button type="button" name="button"></button>
-  
+
   <h1>Settings:</h1>
-  <form class="settings" action="index.html" method="post">
-    <h2>Tilt Degrees</h2>
-    Y-Axis Spin:<input type="text" name="spin" value="10">
-    Y-Axis Speed Up:<input type="text" name="speedup" value="20">
-    Y-Axis Fastest:<input type="text" name="fastest" value="30">
-    X-Axis Allow Movement (between x & -x):<input type="text" name="allow-movement" value="60">
-    
-    <h2>Speed</h2>
-    Spin:<input type="text" name="spin-speed" value="0">
-    Speed Up:<input type="text" name="speedup-speed" value="0.1">
-    Fastest:<input type="text" name="fastest-speed" value="0.2">
-  </form>
+  <!-- <form class="settings" action="index.html" method="post">
+    <h2>Tilt Degrees</h2> Y-Axis Spin:<input type="text" name="spin" value="10"> Y-Axis Speed Up:<input type="text" name="speedup" value="20"> Y-Axis Fastest:<input type="text" name="fastest" value="30"> X-Axis Allow Movement (between x & -x):<input type="text" name="allow-movement"
+      value="60">
+
+    <h2>Speed</h2> Spin:
+    <input type="text" name="spin-speed" value="0"> Speed Up:<input type="text" name="speedup-speed" value="0.1"> Fastest:
+    <input type="text" name="fastest-speed" value="0.2">
+  </form> -->
+  
+  <h2>Letter Spacing</h2>
+  <div class="slidecontainer">
+    <input type="range" min="360" max="1000" value="450" class="slider" id="letter-spacing">
+  </div>
 </body>
 
 
