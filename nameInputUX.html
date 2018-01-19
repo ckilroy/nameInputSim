@@ -66,6 +66,29 @@
     .letter {
       position: absolute;
     }
+    
+    .slider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 15px;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top: 30px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 70px;
+    height: 100px;
+    border-radius: 3px; 
+    background: #4CAF50;
+    cursor: pointer;
+}
   </style>
 
   <script type="text/javascript" src="../nameInputUX/nameInputUX.js"></script>

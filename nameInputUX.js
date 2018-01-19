@@ -16,6 +16,11 @@ yAxisSpeedUp = 20;
 yAxisFastest = 30;
 XAxisAllowsMovement = 60;
 
+// speed  
+spinSpeed = 0;
+speedUpSpeed = 0.1;
+fastestSpeed = 0.2;
+
 
 
 var setPositions = function() {
@@ -64,13 +69,13 @@ var setRightPositions = function(yAxisTilt) {
   var rightDelta;
 
   if (yAxisTilt === "yAxisSpin") {
-    rightDelta = movementDelta;
+    rightDelta = movementDelta + spinSpeed;
   }
   if (yAxisTilt === "yAxisSpeedUp") {
-    rightDelta = movementDelta + 0.1;
+    rightDelta = movementDelta + speedUpSpeed;
   }
   if (yAxisTilt === "yAxisFastest") {
-    rightDelta = movementDelta + 0.1;
+    rightDelta = movementDelta + fastestSpeed;
   }
 
   var newpositions = positionArray.map(function(num) {
@@ -91,13 +96,13 @@ var setLeftPositions = function(yAxisTilt) {
   var leftDelta;
 
   if (yAxisTilt === "yAxisSpin") {
-    leftDelta = movementDelta;
+    leftDelta = movementDelta + spinSpeed;
   }
   if (yAxisTilt === "yAxisSpeedUp") {
-    leftDelta = movementDelta + 0.1;
+    leftDelta = movementDelta + speedUpSpeed;
   }
   if (yAxisTilt === "yAxisFastest") {
-    leftDelta = movementDelta + 0.1;
+    leftDelta = movementDelta + fastestSpeed;
   }
 
   var newpositions = positionArray.map(function(num) {
@@ -217,6 +222,16 @@ $(window).ready(function() {
     }
     if (this.name === "allow-movement") {
       XAxisAllowsMovement = parseInt(this.value);
+    }
+
+    if (this.name === "spin-speed") {
+      spinSpeed = parseInt(this.value);
+    }
+    if (this.name === "speedup-speed") {
+      speedUpSpeed = parseInt(this.value);
+    }
+    if (this.name === "fastest-speed") {
+      fastestSpeed = parseInt(this.value);
     }
   });
 
