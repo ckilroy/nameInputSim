@@ -39,6 +39,8 @@ var arrangeChars = function(element, idx) {
   } else {
     var rotationString = "rotate(" + rotationDegrees + "deg)";
     $(element).css("transform", rotationString);
+          var letterRotationString = "rotate(" + -rotationDegrees + "deg)";
+          $(element).find(".letter").css("transform", letterRotationString)
   }
 
   if (firstLoad) {
