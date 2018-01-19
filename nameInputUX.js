@@ -1,11 +1,11 @@
 arcDegrees = 450;
-startingDegree = 270;
+startingDegree = 275;
 numCharacters = 27;
 letterSpacingDelta = (arcDegrees / numCharacters);
 movementDelta = letterSpacingDelta / 500;
 positionArray = [];
-degreesOver180 = arcDegrees - 180;
-percentOfCircleOver = degreesOver180 / arcDegrees;
+degreesOver360 = arcDegrees - 360;
+percentOfCircleOver = degreesOver360 / arcDegrees;
 numCharactersToHide = Math.ceil(numCharacters * percentOfCircleOver);
 firstLoad = true;
 charSelector = 1;
@@ -107,7 +107,6 @@ var setLeftPositions = function(yAxisTilt) {
 
   var newpositions = positionArray.map(function(num) {
     var newDegree;
-    // debugger
     if ((num - leftDelta) < 0) {
       newDegree = 360 + (num - leftDelta);
     } else {
@@ -240,12 +239,12 @@ $(window).ready(function() {
   letterSpacingSlider.addEventListener("input", function() {
     arcDegrees = event.target.value;
     positionArray = [];
-    startingDegree = 270;
+    startingDegree = 275;
     numCharacters = 27;
     letterSpacingDelta = (arcDegrees / numCharacters);
     movementDelta = letterSpacingDelta / 500;
-    degreesOver180 = arcDegrees - 180;
-    percentOfCircleOver = degreesOver180 / arcDegrees;
+    degreesOver360 = arcDegrees - 360;
+    percentOfCircleOver = degreesOver360 / arcDegrees;
     numCharactersToHide = Math.ceil(numCharacters * percentOfCircleOver);
     firstLoad = true;
     setPositions();

@@ -21,6 +21,15 @@
       transform-origin: bottom center;
     }
 
+    .block {
+      width: 106%;
+      background: #fff;
+      height: 290px;
+      position: absolute;
+      top: 330px;
+      margin-left: -3%;
+    }
+
     .active-letter {
       font-size: 80px;
       width: 100px;
@@ -66,29 +75,34 @@
     .letter {
       position: absolute;
     }
-    
-    .slider {
-    -webkit-appearance: none;
-    width: 50%;
-    height: 15px;
-    border-radius: 5px;   
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-    margin-top: 30px;
-}
 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 70px;
-    height: 100px;
-    border-radius: 3px; 
-    background: #4CAF50;
-    cursor: pointer;
-}
+    h2 {
+      margin-left: 50px;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 50%;
+      height: 15px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+      margin-top: 30px;
+      margin-left: 50px;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 70px;
+      height: 100px;
+      border-radius: 3px;
+      background: #4CAF50;
+      cursor: pointer;
+    }
   </style>
 
   <script type="text/javascript" src="../nameInputUX/nameInputUX.js"></script>
@@ -123,6 +137,7 @@
     <span class="input y"><span class="letter">y</span></span>
     <span class="input z"><span class="letter">z</span></span>
   </h1>
+  <div class="block"></div>
   <div class="name-input">
     <span class="char1">_</span>
     <span class="char2">_</span>
@@ -144,7 +159,7 @@
     <input type="text" name="spin-speed" value="0"> Speed Up:<input type="text" name="speedup-speed" value="0.1"> Fastest:
     <input type="text" name="fastest-speed" value="0.2">
   </form> -->
-  
+
   <h2>Letter Spacing</h2>
   <div class="slidecontainer">
     <input type="range" min="360" max="1000" value="450" class="slider" id="letter-spacing">
