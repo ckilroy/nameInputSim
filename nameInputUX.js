@@ -228,16 +228,32 @@ $(window).ready(function() {
       XAxisAllowsMovement = parseInt(this.value);
     }
 
-    if (this.name === "spin-speed") {
-      spinSpeed = parseInt(this.value);
-    }
-    if (this.name === "speedup-speed") {
-      speedUpSpeed = parseInt(this.value);
-    }
-    if (this.name === "fastest-speed") {
-      fastestSpeed = parseInt(this.value);
-    }
+    // if (this.name === "spin-speed") {
+    //   spinSpeed = parseInt(this.value);
+    // }
+    // if (this.name === "speedup-speed") {
+    //   speedUpSpeed = parseInt(this.value);
+    // }
+    // if (this.name === "fastest-speed") {
+    //   fastestSpeed = parseInt(this.value);
+    // }
   });
+
+  var spinSlider = document.getElementById("spin-speed");
+  var speedupSlider = document.getElementById("speed-up-speed");
+  var fastestSlider = document.getElementById("fastest-speed");
+
+  spinSlider.addEventListener("input", function() {
+    spinSpeed = event.target.value * .1;
+  });
+  speedupSlider.addEventListener("input", function() {
+    speedUpSpeed = event.target.value * .1;
+  });
+  fastestSlider.addEventListener("input", function() {
+    fastestSpeed = event.target.value * .1
+  });
+
+
 
   var letterSpacingSlider = document.getElementById("letter-spacing");
 

@@ -92,8 +92,7 @@
       opacity: 0.7;
       -webkit-transition: .2s;
       transition: opacity .2s;
-      margin-top: 30px;
-      margin-left: 50px;
+      margin: 30px 0 30px 50px;
     }
 
     .slider::-webkit-slider-thumb {
@@ -161,6 +160,21 @@
     <input type="text" name="spin-speed" value="0"> Speed Up:<input type="text" name="speedup-speed" value="0.1"> Fastest:
     <input type="text" name="fastest-speed" value="0.2">
   </form> -->
+
+  <h2>Spin Speed</h2>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="10" value="0" class="slider" id="spin-speed">
+  </div>
+
+  <h2>Speed Up Speed</h2>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="10" value="1" class="slider" id="speed-up-speed">
+  </div>
+
+  <h2>Fastest Speed</h2>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="10" value="2" class="slider" id="fastest-speed">
+  </div>
 
   <h2>Letter Spacing</h2>
   <div class="slidecontainer">
