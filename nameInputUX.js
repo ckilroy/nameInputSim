@@ -214,19 +214,19 @@ $(window).ready(function() {
     }
   });
 
-  $("input").on("change", function() {
-    if (this.name === "spin") {
-      yAxisSpin = parseInt(this.value);
-    }
-    if (this.name === "speedup") {
-      yAxisSpeedUp = parseInt(this.value);
-    }
-    if (this.name === "fastest") {
-      yAxisFastest = parseInt(this.value);
-    }
-    if (this.name === "allow-movement") {
-      XAxisAllowsMovement = parseInt(this.value);
-    }
+  // $("input").on("change", function() {
+  //   if (this.name === "spin") {
+  //     yAxisSpin = parseInt(this.value);
+  //   }
+  //   if (this.name === "speedup") {
+  //     yAxisSpeedUp = parseInt(this.value);
+  //   }
+  //   if (this.name === "fastest") {
+  //     yAxisFastest = parseInt(this.value);
+  //   }
+  //   if (this.name === "allow-movement") {
+  //     XAxisAllowsMovement = parseInt(this.value);
+  //   }
 
     // if (this.name === "spin-speed") {
     //   spinSpeed = parseInt(this.value);
@@ -237,7 +237,24 @@ $(window).ready(function() {
     // if (this.name === "fastest-speed") {
     //   fastestSpeed = parseInt(this.value);
     // }
-  });
+  // });
+  
+    var spinTiltSlider = document.getElementById("spin-tilt");
+    var speedupTiltSlider = document.getElementById("speed-up-tilt");
+    var fastestTiltSlider = document.getElementById("fastest-tilt");
+
+    spinTiltSlider.addEventListener("input", function() {
+      yAxisSpin = event.target.value;
+      $(".spin-tilt-setting").text(yAxisSpin + " deg")
+    });
+    speedupTiltSlider.addEventListener("input", function() {
+      yAxisSpeedUp = event.target.value;
+      $(".speed-up-tilt-setting").text(yAxisSpin + " deg")
+    });
+    fastestTiltSlider.addEventListener("input", function() {
+      yAxisFastest = event.target.value;
+      $(".fastest-tilt-setting").text(yAxisSpin + " deg")
+    });
 
   var spinSlider = document.getElementById("spin-speed");
   var speedupSlider = document.getElementById("speed-up-speed");

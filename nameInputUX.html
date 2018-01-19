@@ -79,7 +79,17 @@
     }
 
     h2 {
+      margin-left: 20px;
+      margin-right: 10px;
+      font-size: 50px
+    }
+
+    h3 {
+      display: inline-block;
+      font-size: 40px;
+      margin-right: 10px;
       margin-left: 50px;
+      font-weight: normal;
     }
 
     .slider {
@@ -92,7 +102,7 @@
       opacity: 0.7;
       -webkit-transition: .2s;
       transition: opacity .2s;
-      margin: 30px 0 30px 50px;
+      margin: 50px 0 50px 50px;
     }
 
     .slider::-webkit-slider-thumb {
@@ -103,6 +113,11 @@
       border-radius: 3px;
       background: #4CAF50;
       cursor: pointer;
+    }
+
+    .set {
+      display: inline-block;
+      font-size: 30px;
     }
   </style>
 
@@ -151,7 +166,6 @@
   </div>
   <button type="button" name="button"></button>
 
-  <h1>Settings:</h1>
   <!-- <form class="settings" action="index.html" method="post">
     <h2>Tilt Degrees</h2> Y-Axis Spin:<input type="text" name="spin" value="10"> Y-Axis Speed Up:<input type="text" name="speedup" value="20"> Y-Axis Fastest:<input type="text" name="fastest" value="30"> X-Axis Allow Movement (between x & -x):<input type="text" name="allow-movement"
       value="60">
@@ -161,25 +175,46 @@
     <input type="text" name="fastest-speed" value="0.2">
   </form> -->
 
-  <h2>Spin Speed</h2>
-  <div class="slidecontainer">
-    <input type="range" min="0" max="10" value="0" class="slider" id="spin-speed">
-  </div>
-
-  <h2>Speed Up Speed</h2>
-  <div class="slidecontainer">
-    <input type="range" min="0" max="10" value="1" class="slider" id="speed-up-speed">
-  </div>
-
-  <h2>Fastest Speed</h2>
-  <div class="slidecontainer">
-    <input type="range" min="0" max="10" value="2" class="slider" id="fastest-speed">
-  </div>
-
   <h2>Letter Spacing</h2>
   <div class="slidecontainer">
     <input type="range" min="360" max="1000" value="450" class="slider" id="letter-spacing">
   </div>
+
+  <h2>Spin</h2>
+  <h3>Tilt</h3>
+  <div class="set spin-tilt-setting">10 deg</div>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="100" value="10" class="slider" id="spin-tilt">
+  </div>
+  <h3>Speed</h3>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="10" value="0" class="slider" id="spin-speed">
+  </div>
+
+  <h2>Speed Up</h2>
+  <h3>Tilt</h3>
+  <div class="set speed-up-tilt-setting">20 deg</div>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="100" value="20" class="slider" id="speed-up-tilt">
+  </div>
+  <h3>Speed</h3>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="10" value="1" class="slider" id="speed-up-speed">
+  </div>
+
+  <h2>Fastest</h2>
+  <h3>Tilt</h3>
+  <div class="set fastest-tilt-setting">30 deg</div>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="100" value="30" class="slider" id="fastest-tilt">
+  </div>
+
+  <h3>Speed</h3>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="10" value="2" class="slider" id="fastest-speed">
+  </div>
+
+
 </body>
 
 
