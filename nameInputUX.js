@@ -4,8 +4,8 @@ numCharacters = 27;
 letterSpacingDelta = (arcDegrees / numCharacters);
 movementDelta = letterSpacingDelta / 500;
 positionArray = [];
-degreesOver360 = arcDegrees - 360;
-percentOfCircleOver = degreesOver360 / arcDegrees;
+degreesOver330 = arcDegrees - 330;
+percentOfCircleOver = degreesOver330 / arcDegrees;
 numCharactersToHide = Math.ceil(numCharacters * percentOfCircleOver);
 firstLoad = true;
 charSelector = 1;
@@ -194,7 +194,12 @@ $(window).ready(function() {
   };
 
   $("button").on("click", function() {
-    var currentLetter = $(".active-letter").text();
+    var currentLetter;
+    $(".active-letter").each(function(idx, element) {
+      if (!$(element).hasClass("hide-letter")) {
+        currentLetter = $(element).text();
+      }
+    });
 
     if (currentLetter !== "<") {
       $(".char" + charSelector).text(currentLetter);
@@ -243,8 +248,8 @@ $(window).ready(function() {
     numCharacters = 27;
     letterSpacingDelta = (arcDegrees / numCharacters);
     movementDelta = letterSpacingDelta / 500;
-    degreesOver360 = arcDegrees - 360;
-    percentOfCircleOver = degreesOver360 / arcDegrees;
+    degreesOver330 = arcDegrees - 330;
+    percentOfCircleOver = degreesOver330 / arcDegrees;
     numCharactersToHide = Math.ceil(numCharacters * percentOfCircleOver);
     firstLoad = true;
     setPositions();
